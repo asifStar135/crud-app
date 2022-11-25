@@ -21,7 +21,7 @@ cloudinary.config({
 connectDb();
 
 //accessing client/build/index.html
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV !== "production") {
     App.use(express.static(path.join(__dirname, "./client/build")));
 
     App.get("*", (req, res) => {
