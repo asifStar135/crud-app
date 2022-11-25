@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.feedback{
+    width: 40%;
+    background: #0000001f;
+    padding: 1rem 1.5rem;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.feedback form{
+    text-align: left !important;
+    width: 75%;
+    font-size: 18px;
+    font-weight: 500;
+    color: #7a3131;
+}
+
+.feedback form input{
+    outline: none !important;
+}
+.feedback form .btn{
+    margin: auto;
+    width: 30%;
+    display: block;
+}

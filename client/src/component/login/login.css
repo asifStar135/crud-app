@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.login{
+    width: 40%;
+    margin: 3.5rem auto;
+    background: #00000014;
+    text-align: center;
+    padding: 2.5rem;
+}
+.login .mb-3{
+    margin-bottom: 1rem!important;
+    margin: auto;
+    width: 71%;
+}
+.login input{
+    border: 1px solid;
+    font-size: 18px;
+}
+.login h2{
+    margin-bottom: 3rem !important;
+}
+.login a{
+    width: 60%;
+    margin: 1rem auto;
+    margin-bottom: 0 !important;
+}

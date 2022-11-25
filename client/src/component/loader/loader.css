@@ -1,0 +1,19 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.loader img{
+    width:100%;
+    border-radius: 50%;
+}
+.loader{
+    width: 17%;
+    text-align: center;
+    margin: 4.5rem auto !important;
+}
+.loader h2{
+    color: #51290d;
+    margin: 2.5rem auto !important;
+    font-family: monospace;
+}

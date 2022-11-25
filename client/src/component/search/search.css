@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.search{
+    width: 40%;
+    background: #0000001f;
+    padding: 1rem 1.5rem;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.search_users{
+    height: 35vh;
+    overflow-y: auto;
+    text-align: center;
+}
+.search_users::-webkit-scrollbar{
+    display: none;
+}
+.search input{
+    background: darkgrey;
+    border: 1px solid #7a3131;
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 7px;
+    text-align: center;
+    width: 60%;
+    margin-bottom: 1rem;
+    outline: none;
+}
+.search button{    
+    outline: none;
+    background: #7a3131;
+    border: none;
+    border-radius: 6px;
+    padding: 7px 12px;
+    color: antiquewhite;
+}
+
+.user img{
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.user .name{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-left: 1rem;
+}
+.user{
+    margin: .6rem 0;
+}

@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main-card{
+    width: 95%;
+    margin: 2rem auto !important;
+    background:transparent;
+    padding: 1.2rem;
+    border: none;
+}
+
+.main-card .left{
+    height: 82vh;
+    overflow-y: auto;
+    width: 32%;
+    border: 1px solid #750000;
+    border-radius: 4%;
+    padding: 1rem 2rem;
+}
+.left .top{
+    color: #7a3131;
+}
+
+.main-card .left::-webkit-scrollbar{
+    display: none;
+}
+
+.user img{
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.user .name{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-left: 1rem;
+    text-decoration: none;
+    color: #51290d;
+}
+.user{
+    margin: 1rem 0;
+}
+
+
+.main-card .crud-img{
+    width: 43vw;
+    border: 1px solid black;
+    border-radius: 1.6rem;
+}
+
+.right{
+    width: 47%;
+}
+
+.right .descr h2{
+    color: #7a3131;
+    font-family: monospace;
+}

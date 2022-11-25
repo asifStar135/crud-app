@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h2, h3, h4{
+    margin: 0 !important;
+}
+
+.single{
+    background: transparent;
+    width: 40%;
+    margin: 1.5rem auto;
+    padding: 1.5%;
+    border-radius: 15px;
+    border: none;
+    border-right: 2px solid !important;
+    border-left: 2px solid !important;
+}
+
+.single img{
+    width: 18rem;
+    height: 18rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.single{
+    margin: 1rem auto;
+}
+.detail{
+    margin: auto;
+    margin-top: 1.2rem;
+}
+
+.single .detail .icon{
+    font-size: 29px;
+    margin-right: 1rem;
+}
+
+.single.userName, .single.date{
+    width: 100%;
+    margin: .6rem;
+}
+.single .btn{
+    width: 46%;
+    margin: 1.2rem auto;
+}
+.single .about{
+    width: 50%;
+    text-align: center;
+}

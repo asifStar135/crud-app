@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.register{
+    width: 40%;
+    margin: 3.5rem auto;
+    background: #00000014;
+    text-align: center;
+    padding: 2.5rem;
+}
+.register .mb-3{
+    margin-bottom: 1rem!important;
+    margin: auto;
+    width: 71%;
+}
+.register input{
+    border: 1px solid;
+    font-size: 18px;
+}
+.register h2{
+    margin-bottom: 2rem !important;
+}
+.register a{
+    width: 50%;
+    margin: 1rem auto;
+    margin-bottom: 0 !important;
+}
+.register img{
+    height: 15rem;
+    width: 15rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 1rem auto;
+}
