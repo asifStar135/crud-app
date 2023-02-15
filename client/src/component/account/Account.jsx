@@ -20,6 +20,8 @@ const Account = () => {
 
     const handleDelete = ()=>{
         const password = window.prompt("Enter your password first...");
+        if(!password) return;
+
         dispatch(deleteUser(password));
     }
 

@@ -7,10 +7,10 @@ import {getAllUser} from '../../redux/userAction';
 import { NavLink } from "react-router-dom";
 
 const Search = () => {
-    const arr = [1,1,,11,1,1,1,1,1,1,1];
     const dispatch = useDispatch();
     const {users} = useSelector(state => state.allUserStore);
     const [input, setInput] = useState();
+    const {user} = useSelector(state => state.userStore)
     
     const [allUser, setAllUser] = useState([]);
 
@@ -37,25 +37,29 @@ const Search = () => {
     return <>
         <Card className="search">
         <h2 className='title'>Search User...</h2>
+        <div className="user d-flex align-items-center">
+            <img src={user?.image?.url} alt="Profile picture.." />
+            <div className="name">{user?.userName}</div>
+        </div>
+        <br />
+        <form >
+            <input type="text" name="name" placeholder='Enter userName..' required
+            onChange={(e)=>setInput(e.target.value)} />
             <br />
-            <form >
-                <input type="text" name="name" placeholder='Enter userName..' required
-                onChange={(e)=>setInput(e.target.value)} />
-                <br />
-            </form>
-            <hr />
+        </form>
+        <hr />
 
-            <div className="search_users users d-flex align-items-center flex-column">
-                {
-                    allUser.length ? allUser.map((el) =>(
-                        <div className="user d-flex align-items-center">
-                            <img src={el?.image?.url} alt="Profile picture.." />
-                            <NavLink to={`/${el._id}`} className="name">{el?.userName}</NavLink>
-                        </div>
-                    )) : <h3>No Users found...!</h3>
-                }
-            </div>    
-            <hr />
+        <div className="search_users users d-flex align-items-center flex-column">
+            {
+                allUser.length ? allUser.map((el) =>(
+                    <div className="user d-flex align-items-center">
+                        <img src={el?.image?.url} alt="Profile picture.." />
+                        <NavLink to={`/${el._id}`} className="name">{el?.userName}</NavLink>
+                    </div>
+                )) : <h3>No Users found...!</h3>
+            }
+        </div>    
+        <hr />
         </Card>
     </>;
 };

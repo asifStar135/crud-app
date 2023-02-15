@@ -13,7 +13,7 @@ const Login = () => {
     const navigate = useNavigate();
     const [userName, setUserName] = useState();
     const [password, setPassword] = useState();
-    const {isAuthenticated, error, message} = useSelector(state => state.userStore);
+    const {isAuthenticated, error, message, loading} = useSelector(state => state.userStore);
 
     const handleLogin = (e) =>{
         e.preventDefault();
@@ -54,7 +54,7 @@ const Login = () => {
                     onChange={(e)=>setPassword(e.target.value)} required/>
                 </Form.Group>
 
-                <Button varint="dark" type="submit" onClick={handleLogin}>
+                <Button varint="dark" type="submit" onClick={handleLogin} disabled={loading}>
                     Login
                 </Button>
             </Form>

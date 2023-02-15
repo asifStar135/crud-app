@@ -12,7 +12,7 @@
 }
 
 .main-card .left{
-    height: 82vh;
+    max-height: 82vh;
     overflow-y: auto;
     width: 32%;
     border: 1px solid #750000;
@@ -58,4 +58,23 @@
 .right .descr h2{
     color: #7a3131;
     font-family: monospace;
+}
+
+@media screen and (max-width:700px) {
+    .main-card{
+        flex-direction: column !important;
+        padding: 1rem;
+    }
+    .left{
+        width: 100% !important;
+        max-height: 65vh !important;
+        margin-bottom: 2rem;
+    }
+    .right{
+        width: 100%;
+        border-right: 1px solid !important;
+    }
+    .right .crud-img{
+        width: 100%;
+    }
 }

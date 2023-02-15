@@ -34,3 +34,16 @@
     border-radius: 50%;
     margin: 1rem auto;
 }
+
+@media screen and (max-width:1200px) {
+    .register{
+        width: 90%;
+        padding: 1rem;
+    }
+    .register a{
+        width: 100%;
+    }
+    .register .mb-3{
+        width: 80%;
+    }
+}

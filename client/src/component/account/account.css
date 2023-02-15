@@ -66,3 +66,28 @@ h2, h3, h4{
     margin-top:2.5rem !important;
     text-align: justify;
 }
+
+@media screen and (max-width:700px){
+    .account{
+        width: 90%;
+        flex-direction: column !important;
+    }
+    .account .account-left{
+        width: 100%;
+        border: none;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        margin:1.5rem 0;
+    }
+    .account-left .detail{
+        padding: 0 3.8rem;
+    }
+    .account .right{
+        border: none;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+    .account .btn{
+        width: 56%;
+    }
+}

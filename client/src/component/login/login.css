@@ -27,3 +27,16 @@
     margin: 1rem auto;
     margin-bottom: 0 !important;
 }
+
+@media screen and (max-width:1200px) {
+    .login{
+        width: 90%;
+        padding: 1rem;
+    }
+    .login a{
+        width: 100%;
+    }
+    .login .mb-3{
+        width: 80%;
+    }
+}

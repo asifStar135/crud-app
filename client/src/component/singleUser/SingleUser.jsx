@@ -25,7 +25,9 @@ const SingleUser = () => {
         <Card className="single justify-content-around align-items-center">
             <img src={user?.image?.url} alt="Profile pic..." />
             <div className="detail d-flex flex-column align-items-center">
+                <hr/>
                 <h2 className="name">{user?.name}</h2>
+                <hr/>
                 <div className="userName d-flex align-items-center">
                     <FaUserCheck className='icon'/>
                     <h3>{user?.userName}</h3>

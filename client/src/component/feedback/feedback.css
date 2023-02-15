@@ -27,3 +27,11 @@
     width: 30%;
     display: block;
 }
+
+
+@media screen and (max-width:700px) {
+    .feedback{
+        width: 90%;
+        padding: 1rem !important;
+    }
+}

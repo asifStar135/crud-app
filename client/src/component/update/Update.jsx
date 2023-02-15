@@ -8,12 +8,14 @@ import { updateUser } from '../../redux/userAction'
 import "./update.css"
 
 const Update = () => {
+    const {loading} = useSelector(state => state.userStore);
 
     const [user, setUser] = useState({
         name:"", 
         about:"", 
         password:""
     });
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [image, setImage] = useState();
@@ -109,8 +111,8 @@ const Update = () => {
                     onChange={(e)=>setConfirmPass(e.target.value)}/>
                 </Form.Group>
 
-                <Button varint="dark" type="submit" onClick={handleUpdate}>
-                    Register
+                <Button varint="dark" type="submit" onClick={handleUpdate} disabled={loading}>
+                    Save changes !
                 </Button>
             </Form>
         </Card>

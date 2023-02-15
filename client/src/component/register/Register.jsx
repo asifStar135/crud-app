@@ -10,7 +10,7 @@ import { useEffect } from 'react'
 const Register = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const {isAuthenticated, error, message} = useSelector(state => state.userStore);
+    const {isAuthenticated, error, message, loading} = useSelector(state => state.userStore);
 
     const [user, setuser] = useState({name:"", userName:"", password:"", about:""});
     const [image, setImage] = useState("");
@@ -101,7 +101,7 @@ const Register = () => {
                     onChange={(e)=>setConfirm(e.target.value)} />
                 </Form.Group>
 
-                <Button onClick={handleRegister}>
+                <Button onClick={handleRegister} disabled={loading}>
                     Register
                 </Button>
             </Form>

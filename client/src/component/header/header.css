@@ -1,0 +1,19 @@
+.navbar a{
+    color: white !important;
+}
+.navbar-toggler{
+    filter: invert(1);
+}
+.navbar h3{
+    display: none !important;
+}
+.offcanvas{
+    width: 60% !important;
+}
+
+@media screen and (max-width:700px) {
+    .link-h{
+        display: unset !important;
+        margin-left: 1rem !important;
+    }
+}
