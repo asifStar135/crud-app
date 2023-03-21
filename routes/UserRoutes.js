@@ -4,6 +4,8 @@ const { register, login, loadUser, updateUser, deleteUser, getUsers, findUser, l
 const {isAuthenticated} = require("../middleware/authenticate");
 const router = express.Router();
 
+//  EVERY ROUTE IS ADDED WHERE THE API REQUESTS WILL CALLED...
+
 router.route("/register").post(register);
 router.route("/login").post(login);
 router.route("/account").put(isAuthenticated, logout);

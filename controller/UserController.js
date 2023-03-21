@@ -126,15 +126,16 @@ exports.loadUser = async(req, res) =>{
 
 exports.logout = async(req, res) =>{
     try {
+        //  OPTIONS FOR THE COOKIE AFTER LOGGING OUT 
         const options = {
-            expires:new Date(Date.now() + 0),
+            expires:new Date(Date.now() + 0), // JUST TO EXPIRE...
             httpOnly:true
         }
 
         res.status(201).cookie("token", null, options).json({
             message:"logged out...!"
         })
-
+        //  SUCCESSS
     } catch (error) {
         res.status(500).json({
             message:error.message
@@ -144,9 +145,10 @@ exports.logout = async(req, res) =>{
 
 exports.updateUser = async (req, res) =>{
     try {
-        const {name, image, about, password} = req.body;
-        const user = await User.findById(req.user._id);
+        const {name, image, about, password} = req.body; //  GETTING DATA TO UPDATE...
+        const user = await User.findById(req.user._id);  // FETCHING THE USER
 
+        //  UPDATING THE DETAILS ONE BY ONE
         if(name){
             user.name = name;
         }
@@ -158,6 +160,7 @@ exports.updateUser = async (req, res) =>{
         }
 
         if(image){
+            // CONDITION FOT THE DEFAULT IMAGE
             if(user.image.public_id != "funmedia_users/default_avatar_xlauux"){
                 cloudinary.v2.uploader.destroy(user.image.public_id);
             }
@@ -169,7 +172,7 @@ exports.updateUser = async (req, res) =>{
             }
         }
 
-        user.save();
+        user.save(); //  SAVING THE USER AFTER UPDATING
         res.status(201).json({
             message:"account updated...!"
         })
@@ -223,14 +226,14 @@ exports.deleteUser = async (req, res) =>{
 
 exports.getUsers = async (req, res) =>{
     try {
-        const user = await User.findById(req.user._id);
+        const user = await User.findById(req.user._id); //  CURRENT USER...
 
-        const allUser = await User.find();
+        const allUser = await User.find();  //  ALL USERS IN DB
 
         let index = allUser.indexOf(user);
-        allUser.splice(index, 1);
+        allUser.splice(index, 1);  //  REMOVING THE CURRENT USER FROM THERE...
 
-        allUser.sort((a, b)=>0.5 - Math.random())
+        allUser.sort((a, b)=>0.5 - Math.random());   //   SORTING THE USERS IN RANDOM ORDER...
 
         res.status(201).json({
             message:"all users fetched...!",
@@ -246,13 +249,13 @@ exports.getUsers = async (req, res) =>{
 
 exports.findUser = async(req, res) =>{
     try {
-        const user = await User.findById(req.params.id);
+        const user = await User.findById(req.params.id);  // FINDING THE USER USING THE PRARAMS.ID
         if(!user){
             return res.status(401).json({
                 message:"user not found...!"
             })
         }
-
+        //   SENDING THE FETCHED USER AS RESPONSE
         res.status(201).json({
             message:"user fetched...!",
             user
