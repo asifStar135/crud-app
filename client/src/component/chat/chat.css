@@ -1,0 +1,84 @@
+
+
+.chat-card{
+    width: 83%;
+    margin: 4rem auto;
+    padding: 2%;
+    background-color: bisque;
+}
+.chat-card .card-title{
+    text-align: center;
+    font-size: 26px;
+    color: rgb(34, 32, 98);
+}
+.chat-card .card-title .user{
+    width: 25%;
+    max-width: 40%;
+    margin: auto;
+    background-color: transparent;
+}
+.chat-card .main{
+    padding: 2%;
+    color: white;
+    border-radius: 20px;
+}
+.chat-card .left-users{
+    padding: 1.2%;
+    background-color: #333a67 !important;
+    border-radius: 20px;
+    height: 90vh;
+    overflow-y: auto;
+}
+
+.chat-card .right-chat{
+    width: 68%;
+    padding: 2%;
+    background-color: #333a67;
+    border-radius: 20px;
+}
+
+.right-chat .user{
+    width: 65%;
+    max-width: 78%;
+    margin: auto;
+    background-color: transparent !important;
+    margin: auto !important;
+}
+
+.chat-card .user{
+    margin: 1rem 0;
+    background-color: #ffffff38;
+    border-radius: 30px;
+    padding: 0.3rem;
+    cursor: pointer;
+}
+.chat-card .user h4{
+    margin-left: .5rem !important;
+}
+
+.chat-right{
+    text-align: right;
+    margin-left: 10rem;
+}
+.chat-left{
+    margin-right: 10rem;
+}
+
+.chats::-webkit-scrollbar{
+    display: none;
+}
+
+.chats{
+    height: 62vh;
+    overflow-y: auto;
+}
+.chat-card h6{
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: rgba(40, 40, 75, 0.696);
+}
+.send-box input{
+    width: 86%;
+    margin-right: .8rem;
+    box-shadow: none;
+}

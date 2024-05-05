@@ -1,4 +1,5 @@
 import axios from "axios"
+const url = ""
 
 export const registerUser = (name, userName, password, image, about) => async (dispatch) =>{
     try {
@@ -6,7 +7,7 @@ export const registerUser = (name, userName, password, image, about) => async (d
             type:"registerRequest"
         })
 
-        const {data} = await axios.post("/register", {name, userName, password, image, about});
+        const {data} = await axios.post(`${url}/register`, {name, userName, password, image, about});
 
         dispatch({
             type:"registerSuccess",
@@ -27,7 +28,7 @@ export const logoutUser = () => async (dispatch) =>{
             type:"logoutRequest"
         })
 
-        const {data} = await axios.put("/account");
+        const {data} = await axios.put(`${url}/account`);
 
         dispatch({
             type:"logoutSuccess",
@@ -47,7 +48,7 @@ export const loginUser = (userName, password) => async (dispatch) =>{
             type:"loginRequest"
         })
 
-        const {data} = await axios.post("/login", {userName, password});
+        const {data} = await axios.post(`${url}/login`, {userName, password});
 
         dispatch({
             type:"loginSuccess",
@@ -68,7 +69,7 @@ export const loadUser = () => async (dispatch) =>{
             type:"loadUserRequest"
         })
 
-        const {data} = await axios.get("/account");
+        const {data} = await axios.get(`/account`);
 
         dispatch({
             type:"loadUserSuccess",
@@ -89,7 +90,7 @@ export const updateUser = (name, about, password, image) => async (dispatch) =>{
             type:"updateRequest"
         })
 
-        const {data} = await axios.put("/update", {name, image, about, password});
+        const {data} = await axios.put(`${url}/update`, {name, image, about, password});
 
         dispatch({
             type:"updateSuccess",
@@ -110,7 +111,7 @@ export const deleteUser = (password) => async (dispatch) =>{
             type:"deleteUserRequest"
         })
 
-        const {data} = await axios.delete("/account", {data: {password}});
+        const {data} = await axios.delete(`${url}/account`, {data: {password}});
 
         dispatch({
             type:"deleteUserSuccess",
@@ -131,7 +132,7 @@ export const singleUser = (id) => async (dispatch) =>{
             type:"singleUserRequest"
         })
 
-        const {data} = await axios.get(`/${id}`);
+        const {data} = await axios.get(`${url}/${id}`);
 
         dispatch({
             type:"singleUserSuccess",
@@ -151,7 +152,7 @@ export const getAllUser = () => async (dispatch) =>{
             type:"allUserRequest"
         })
 
-        const {data} = await axios.get("/allUser");
+        const {data} = await axios.get(`${url}/allUser`);
 
         dispatch({
             type:"allUserSuccess",
@@ -162,6 +163,45 @@ export const getAllUser = () => async (dispatch) =>{
         dispatch({
             type:"allUserFailure",
             payload:error.response.data.message
+        })
+    }
+}
+
+
+export const sendMessage = (message, reciever_id) => async(dispatch) =>{
+    try {
+        dispatch({
+            type:"sendMessageRequest"
+        })
+
+        const {data} = await axios.post(`${url}/sendMsg/`, {message, reciever_id});
+
+        dispatch({
+            type:"sendMessageSuccess",
+            payload : data
+        })
+    } catch (error) {
+        dispatch({
+            type:"sendMessageFailure"
+        })
+    }
+}
+
+export const getAllMessages = (reciever) => async(dispatch) =>{
+    try {
+        dispatch({
+            type:"allMessageRequest"
+        })
+
+        const {data} = await axios.get(`${url}/getAllMsg/${reciever}`);
+
+        dispatch({
+            type:"allMessageSuccess",
+            payload : data
+        })
+    } catch (error) {
+        dispatch({
+            type:"allMessageFailure"
         })
     }
 }

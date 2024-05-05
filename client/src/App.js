@@ -12,8 +12,9 @@ import Login from './component/login/Login';
 import Update from './component/update/Update';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { loadUser } from './redux/userAction';
+import { getAllUser, loadUser } from './redux/userAction';
 import SingleUser from './component/singleUser/SingleUser';
+import Chat from './component/chat/Chat';
 
 function App() {
 	const dispatch = useDispatch();
@@ -21,6 +22,7 @@ function App() {
 	
 	useEffect(() =>{
 		dispatch(loadUser());
+		dispatch(getAllUser());
 	}, [dispatch])
 
 	return (
@@ -34,6 +36,7 @@ function App() {
 				<Route path='/register' element={<Register/>}/>
 				<Route path='/login' element={<Login/>}/>
 				<Route path='/update' element={isAuthenticated ? <Update/> : <Login/>}/>
+				<Route path='/chat' element={isAuthenticated ? <Chat/> : <Login/>}/>
 				<Route path="/:id" element={isAuthenticated ? <SingleUser/> : <Login/>}/>
 			</Routes>
 		</>

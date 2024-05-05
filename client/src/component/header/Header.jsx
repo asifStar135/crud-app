@@ -5,7 +5,8 @@ import {AiFillHome, AiOutlineHome} from "react-icons/ai";
 import {FaSearch} from "react-icons/fa";
 import {BiSearchAlt} from "react-icons/bi";
 import {RiAccountPinBoxLine, RiAccountPinBoxFill} from "react-icons/ri";
-import {BsFillChatSquareTextFill, BsChatSquareText} from "react-icons/bs"
+import { BsChatText, BsChatTextFill} from "react-icons/bs"
+import { RiFeedbackFill, RiFeedbackLine} from "react-icons/ri"
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./header.css"
@@ -54,12 +55,22 @@ const Header = () => {
                                 <h3 className="link-h">Search</h3>
                             </div>
                         </Nav.Link>
+                        <Nav.Link as={NavLink} to="/chat"  onClick={()=>setTab("/chat")}>
+                            <div className="d-flex">
+                                {
+                                    tab === "/chat" ?
+                                    <BsChatTextFill className="icon"/> :
+                                    <BsChatText className="icon"/>
+                                }
+                                <h3 className="link-h">Search</h3>
+                            </div>
+                        </Nav.Link>
                         <Nav.Link as={NavLink} to="/feedback"  onClick={()=>setTab("/feedback")}>
                             <div className="d-flex">
                                 {
                                     tab === "/feedback" ?
-                                    <BsFillChatSquareTextFill className="icon"/> :
-                                    <BsChatSquareText className="icon"/>
+                                    <RiFeedbackFill className="icon"/> :
+                                    <RiFeedbackLine className="icon"/>
                                 }
                                 <h3 className="link-h">Feedback</h3>
                             </div>

@@ -132,3 +132,31 @@ export const singleUserReducer = createReducer({},{
         state.error = null;
     }
 })
+
+export const chatReducer = createReducer({}, {
+    sendMessageRequest : (state) =>{
+        state.loading  = true;
+    },
+    sendMessageSuccess : (state, action) =>{
+        state.loading = false;
+        state.message = action.payload.message;
+        state.newChat = action.payload.newChat;
+    },
+    sendMessageFailure : (state, action) =>{
+        state.loading = false;
+        state.error = action.payload;
+    },
+    
+    allMessageRequest : (state) =>{
+        state.loading  = true;
+    },
+    allMessageSuccess : (state, action) =>{
+        state.loading = false;
+        state.message = action.payload.message;
+        state.messages = action.payload.allMessages;
+    },
+    allMessageFailure : (state, action) =>{
+        state.loading = false;
+        state.error = action.payload;
+    },
+})

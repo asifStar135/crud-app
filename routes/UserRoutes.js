@@ -1,5 +1,6 @@
 const express = require('express');
 const { register, login, loadUser, updateUser, deleteUser, getUsers, findUser, logout } = require('../controller/UserController');
+const url = "http://localhost:5000"
 
 const {isAuthenticated} = require("../middleware/authenticate");
 const router = express.Router();
